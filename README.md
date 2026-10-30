@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/msg91-logo.png" alt="MSG91" width="120"></p>
+
 # MSG91 MCP
 
 Lets AI assistants work with [MSG91](https://msg91.com): find the right MSG91 API for SMS, OTP, WhatsApp, Email, Voice and more, read its parameters, and call it correctly.
@@ -41,6 +43,13 @@ npx docstar-cli msg91 whatsapp send-message-in-text --integrated_number "91XXXXX
   --recipient_number "91YYYYYYYYYY" --content_type "text" --text "Hello"
 ```
 The CLI asks for your MSG91 authkey in the terminal and can save it. Do not paste your authkey into an AI chat.
+
+## MCP Registry
+[server.json](server.json) is the listing for the official MCP Registry, as `io.github.walkover-mcp/msg91`. To publish it, or a change (bump `version` first):
+```bash
+mcp-publisher login github     # as a public member of the walkover-mcp organization
+mcp-publisher publish
+```
 
 ## Links
 - Website: https://msg91.com

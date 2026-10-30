@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.walkover-mcp/msg91",
+  "title": "MSG91",
+  "description": "Find and call the right MSG91 API for SMS, OTP, WhatsApp, Email and Voice.",
+  "version": "1.0.0",
+  "websiteUrl": "https://msg91.com",
+  "repository": {
+    "url": "https://github.com/walkover-mcp/msg91",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://stuff.thingsofbrand.com/msg91.com/images/imge_msg91.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.msg91.com/mcp"
+    }
+  ]
+}
