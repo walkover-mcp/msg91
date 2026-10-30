@@ -45,9 +45,18 @@ npx docstar-cli msg91 whatsapp send-message-in-text --integrated_number "91XXXXX
 The CLI asks for your MSG91 authkey in the terminal and can save it. Do not paste your authkey into an AI chat.
 
 ## MCP Registry
-[server.json](server.json) is the listing for the official MCP Registry, as `io.github.walkover-mcp/msg91`. To publish it, or a change (bump `version` first):
+[server.json](server.json) is the listing for the official MCP Registry, as `com.msg91/mcp`. The `com.msg91` name is proven by owning the `msg91.com` domain.
+
+One-time setup: create a signing key and publish its public half on `msg91.com` (Git Bash or any shell with OpenSSL):
 ```bash
-mcp-publisher login github     # as a public member of the walkover-mcp organization
+openssl genpkey -algorithm Ed25519 -out mcp-registry-key.pem
+echo "v=MCPv1; k=ed25519; p=$(openssl pkey -in mcp-registry-key.pem -pubout -outform DER | tail -c 32 | base64)"
+```
+Add the printed line as a TXT record on `msg91.com`. Keep `mcp-registry-key.pem` private and out of this repo.
+
+Publish (bump `version` first for any later change):
+```bash
+mcp-publisher login dns --domain msg91.com --private-key "$(openssl pkey -in mcp-registry-key.pem -noout -text | grep -A3 'priv:' | tail -n +2 | tr -d ' :\n')"
 mcp-publisher publish
 ```
 

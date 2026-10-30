@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.walkover-mcp/msg91",
+  "name": "com.msg91/mcp",
   "title": "MSG91",
   "description": "Find and call the right MSG91 API for SMS, OTP, WhatsApp, Email and Voice.",
   "version": "1.0.0",
