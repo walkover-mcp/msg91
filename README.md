@@ -44,4 +44,3 @@ The CLI asks for your MSG91 authkey in the terminal and can save it. Do not past
 
 ## Links
 - Website: https://msg91.com
-- API docs: https://docs.msg91.com
